@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ejercicio2.css')}}">
+</head>
+<body>
+    <div class="form-container">
+         <h1>Inicio de Sesión</h1>
+         <form method="POST">
+             <label for="usuario">Ingresa tu nombre:</label>
+             <input type="text" id="usuario" name="usuario" required>
+             <label for="contraseña">ingresa tu contraseña</label>
+             <input type="password" id="contraseña" name="contraseña" required>
+             <button type="submit">iniciar sesion</button>
+         </form>
+         {% if mensaje is not none %}
+    <div class="mensaje">
+        <p>{{mensaje}}</p>
+    </div>
+    {% endif %}
+</div>
+<footer>
+    <a href="{{ url_for('index') }}" class="button">volver al menu</a>
+</footer>
+</body>
+</html>
